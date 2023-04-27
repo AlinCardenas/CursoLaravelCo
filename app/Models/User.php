@@ -49,14 +49,12 @@ class User extends Authenticatable
         return new Attribute(
             //accesor para traer un dato modificado  de la base de datos
             //Los accesores transforman el valor despues de ser almacenados
-            get: function($value){
-                return ucwords($value);
-            },
+            get: fn($value) => ucwords($value),
+            
 
             //Los mutadores transforman el valor antes de almacenarlos
-            set: function($value){
-                return strtolower($value);
-            }
+            set: fn($value) => strtolower($value)
+            
         );
 
     }
