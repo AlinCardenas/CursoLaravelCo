@@ -32,4 +32,20 @@ class ProductoController extends Controller
         $producto= Producto::find($id);
         return view('productos.show', compact('producto'));
     }
+
+    public function edit(Producto $producto){
+        return view('productos.edit',compact('producto'));
+    }
+
+    public function update(Request $request, Producto $producto){
+        $producto->nombre = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->precio = $request->precio;
+        $producto->save();
+        return redirect()->route('productos.show',$producto);
+
+    }
 }
+
+
+

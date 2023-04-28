@@ -26,4 +26,11 @@ Route::controller(ProductoController::class)->group(function(){
     // recibir informacion del formulario 
     Route::post('productos', 'store')->name('productos.store');
     Route::get('productos/{id}','show')->name('productos.show');
+    // ruta para enviar a formulario de editar
+    Route::get('productos/{producto}/edit', 'edit')->name('productos.edit');
+    // ruta para enviar informacionacualizada
+    Route::put('productos/{producto}', 'update')->name('productos.update');
+
 });
+
+
