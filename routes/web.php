@@ -20,7 +20,10 @@ Route::get('/', function () {
 
 
 Route::controller(ProductoController::class)->group(function(){
-    Route::get('productos/index', 'index');
-    Route::get('productos/create', 'create');
-    Route::get('productos/{producto}','show');
+  //Route::get('url paa acceder', 'metodo')->name('nombre de la ruta');
+    Route::get('productos/index', 'index')->name('productos.index');
+    Route::get('productos/create', 'create')->name('productos.create');
+    // recibir informacion del formulario 
+    Route::post('productos', 'store')->name('productos.store');
+    Route::get('productos/{id}','show')->name('productos.show');
 });

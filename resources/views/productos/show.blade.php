@@ -1,8 +1,11 @@
 @extends('layouts.plantilla')
-@section('title', 'producto'. $producto)
+@section('title', 'producto'. $producto->nombre)
 
 @section('content')
 
-    <h1>Producto {{$producto}} </h1>
+    <h1>Producto {{$producto->nombre}} </h1>
+    <a href="{{route('productos.index')}}">Regresar</a>
+    <p><strong>Descripcion: </strong>{{$producto->descripcion}}</p>
+    <p><strong>Precio: </strong>{{$producto->precio}}</p>
 
 @endsection
